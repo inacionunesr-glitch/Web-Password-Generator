@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Generate strong random passwords." />
+    <link rel="icon" type="image/svg+xml" href="src/assets/favicon.svg" />
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Password Generator</title>
+  </head>
+
+  <body>
+    <main class="app">
+      <h1 class="title">Password Generator</h1>
+
+      <form id="generator-form" class="form">
+        <fieldset class="fieldset">
+          <legend>Password size</legend>
+
+          <label class="option">
+            <input type="radio" name="size" value="8" />
+            Tiny (8)
+          </label>
+
+          <label class="option">
+            <input type="radio" name="size" value="16" checked />
+            Medium (16)
+          </label>
+
+          <label class="option">
+            <input type="radio" name="size" value="24" />
+            Big (24)
+          </label>
+        </fieldset>
+
+        <fieldset class="fieldset">
+          <legend>Contains</legend>
+
+          <label class="option">
+            <input type="checkbox" name="letters" checked />
+            Letters
+          </label>
+
+          <label class="option">
+            <input type="checkbox" name="uppercase" checked />
+            Uppercase
+          </label>
+
+          <label class="option">
+            <input type="checkbox" name="numbers" checked />
+            Numbers
+          </label>
+
+          <label class="option">
+            <input type="checkbox" name="symbols" />
+            Symbols
+          </label>
+        </fieldset>
+
+        <button type="submit" class="btn">Generate</button>
+      </form>
+
+      <section class="result" aria-live="polite">
+        <label for="password" class="visually-hidden">Generated password</label>
+        <input
+          id="password"
+          class="result__input"
+          type="text"
+          readonly
+          placeholder="Your password will appear here"
+        />
+        <button type="button" id="copy-btn" class="btn btn--secondary" disabled>
+          Copy
+        </button>
+        <p id="feedback" class="result__feedback"></p>
+      </section>
+    </main>
+
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>
